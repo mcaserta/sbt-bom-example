@@ -27,7 +27,7 @@ You should see that the `bom` plugin gets installed in the local Ivy cache and t
 
 The example assumes you have a company maven repository whose credentials are specified in the `$HOME/ivy2/.auth-acme` file like this:
 
-  realm=Sonatype Nexus Repository Manager
+	realm=Sonatype Nexus Repository Manager
 	host=nexus.acme.com
 	user=roadrunner
 	password=beepbeep
