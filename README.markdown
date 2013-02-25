@@ -143,6 +143,22 @@ References to files and commands in this section are relative to the `model` dir
 
 ### plugins.sbt (in dir `project`)
 
+```scala
+resolvers ++= Seq(
+  "ACME Mirror" at "http://nexus.acme.com/content/groups/public",
+  "ACME Releases" at "http://nexus.acme.com/content/repositories/acme-releases",
+  "ACME 3rd Party" at "http://nexus.acme.com/content/repositories/acme-thirdparty",
+  "ACME Snapshots" at "http://nexus.acme.com/content/repositories/acme-snapshots",
+  "Sonatype snapshots" at "http://oss.sonatype.org/content/repositories/snapshots/"
+)
+```
+
+Here we are declaring a list of resolvers. This is not strictly necessary and is only needed if you want to allow people to build the `model` project without having to do a `publish-local` of the BOM first.
+
+```scala
+addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.3.0-SNAPSHOT")
+```
+
 Here we have the usual sbt-idea stuff as above and, of course:
 
 ```scala
@@ -150,6 +166,12 @@ addSbtPlugin("com.acme.sbt.bom" % "bom" % "1.0.0-SNAPSHOT")
 ```
 
 This makes the plugin classes available in SBT's build classpath.
+
+```scala
+credentials += Credentials(Path.userHome / ".ivy2" / ".auth-acme")
+```
+
+Again, this is only necessary to configure authentication if you're using the maven repositories to distribute your artifacts.
 
 ### Build.scala (in dir `project`)
 
