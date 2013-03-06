@@ -148,15 +148,14 @@ resolvers ++= Seq(
   "ACME Mirror" at "http://nexus.acme.com/content/groups/public",
   "ACME Releases" at "http://nexus.acme.com/content/repositories/acme-releases",
   "ACME 3rd Party" at "http://nexus.acme.com/content/repositories/acme-thirdparty",
-  "ACME Snapshots" at "http://nexus.acme.com/content/repositories/acme-snapshots",
-  "Sonatype snapshots" at "http://oss.sonatype.org/content/repositories/snapshots/"
+  "ACME Snapshots" at "http://nexus.acme.com/content/repositories/acme-snapshots"
 )
 ```
 
 Here we are declaring a list of resolvers. This is not strictly necessary and is only needed if you want to allow people to build the `model` project without having to do a `publish-local` of the BOM first.
 
 ```scala
-addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.3.0-SNAPSHOT")
+addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.3.0")
 ```
 
 Here we have the usual sbt-idea stuff as above and, of course:
