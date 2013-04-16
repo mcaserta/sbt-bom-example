@@ -5,7 +5,7 @@ resolvers ++= Seq(
   "ACME Snapshots" at "http://nexus.acme.com/content/repositories/acme-snapshots"
 )
 
-addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.3.0")
+addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.4.0")
 
 addSbtPlugin("com.acme.sbt.bom" % "bom" % "1.0.0-SNAPSHOT")
 
